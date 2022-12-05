@@ -42,6 +42,6 @@ jobs:
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 这是文档部署到的分支名称
+          # 这是文档部署到的分支名称，注意在 github pages 中构建分支改为以下分支
           branch: gh-pages
           folder: src/.vuepress/dist
