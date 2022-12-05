@@ -12,7 +12,7 @@
 npm install -g pnpm
 ```
 
-### 创建项目
+### 创建新项目
 
 使用 `vuepress-theme-hope` 创建一个初始的项目模板
 
@@ -20,9 +20,11 @@ npm install -g pnpm
 pnpm create vuepress-theme-hope@next my-docs
 ```
 
-## 运行
+## 运行已存在项目
 
 ```sh
+# 安装依赖，已经安装了vuepress的不需要运行
+pnpm i
 # 启动开发服务器
 pnpm docs:dev
 # 构建项目并输出
@@ -30,6 +32,7 @@ pnpm docs:build
 # 清除缓存并启动开发服务器
 pnpm docs:clean-dev
 ```
+
 
 ## 部署
 
