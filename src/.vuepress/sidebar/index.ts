@@ -3,24 +3,24 @@ import { sidebar } from "vuepress-theme-hope";
 export const sidebarConfig = sidebar({
   "/": [
     "",
-    // {
-    //   text: "Java 基础知识",
-    //   icon: "creative",
-    //   prefix: "/java",
-    //   link: "/java",
-    //   children: [
-    //     "structure"
-    //   ]
-    // },
     {
-      text: "文章",
-      icon: "note",
-      prefix: "posts/",
-      children: "structure",
+      text: "Java",
+      icon: "java",
+      prefix: "/java",
+      link: "/java",
+      collapsible: true,
+      children: [
+        "bytecode",
+        "collector"
+      ]
     },
-    "intro",
-    "slides",
+    {
+      text: "Git",
+      icon: "git",
+      prefix: "git/",
+      link: "/git",
+      collapsible: true,
+      children: "structure"
+    }
   ],
-  "/java/": "structure",
-  "/git/": "structure",
 });
