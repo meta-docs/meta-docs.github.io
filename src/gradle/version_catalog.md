@@ -1,12 +1,12 @@
 # Gradle Version Catalog 说明
 
-## Sharing catalogs 分享目录
+## 作为平台公共依赖
 
 Gradle 7.x 版本提供了 version catalog 插件用于声明版本目录，可用于替代maven bom。
 
 ### 提供目录
 
-`build.gradle` 文件如下
+`settings.gradle`文件不需要做额外修改，`build.gradle` 文件如下
 
 ```groovy
 plugins {
@@ -29,6 +29,7 @@ catalog {
         library('groovy-core', 'org.codehaus.groovy', 'groovy').versionRef('groovy')
         library('groovy-json', 'org.codehaus.groovy', 'groovy-json').versionRef('groovy')
         library('groovy-nio', 'org.codehaus.groovy', 'groovy-nio').versionRef('groovy')
+        library('hutool-core', 'cn.hutool', 'hutool-core').version('5.8.9')
         
 
         // Spring 提供的一些 Bom，引入了一组依赖，但用的是Maven方式
@@ -67,4 +68,77 @@ publishing {
 }
 ```
 
-- 
+配置好后作为一个项目发布到Maven仓库（Nexus），publish 会自动生成一个`toml`文件，即可被其他项目引用。
+
+
+### 使用目录
+
+`settings.gradle` 完整配置
+
+```groovy
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        maven { url "https://nexus.xxxx.com/repository/releases/" }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url "https://repo.spring.io/plugins-release" }
+        gradlePluginPortal()
+    }
+    versionCatalogs {
+        libs {
+            from("com.skycoresaas.arch:skycore-dependencies:1.0.0")
+        }
+    }
+}
+```
+
+`build.gradle` 完整配置
+
+```groovy
+plugins {
+    id 'java'
+    id 'java-library'
+    alias(libs.plugins.spring.boot)
+}
+
+group = 'group_name'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+
+dependencies {
+    // catalog中声明的依赖，使用别名的方式引入，idea 2022.3之后的版本会有智能提示
+    implementation libs.hutool.core
+    implementation platform (libs.spring.boot.dependencies)
+    implementation platform (libs.spring.cloud.alibaba.dependencies)
+    // spring-boot-dependencies 2.7.5版本还是以Maven Bom形式声明的依赖，使用方式如下
+    implementation 'com.google.code.gson:gson'
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+```
+
+
+## 仅在项目内使用
+
+ version catalog 改为在 `settings.gradle` 中配置，语法上和上面一致
+
+```groovy
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            ...
+        }
+    }
+}
+```
+

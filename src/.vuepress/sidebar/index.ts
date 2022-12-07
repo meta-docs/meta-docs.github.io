@@ -18,23 +18,22 @@ export const sidebarConfig = sidebar({
       text: "Git",
       icon: "git",
       prefix: "git/",
-      link: "/git",
       collapsible: true,
       children: "structure"
     },
     {
       text: "Gradle",
-      icon: "lanunch",
+      icon: "/assets/icon/gradle.svg",
       prefix: "gradle/",
       collapsible: true,
       children: [
         "settings",
-        "catalog",
+        "version_catalog",
       ]
     },
     {
       text: "Node",
-      icon: "lanunch",
+      icon: "/assets/icon/node-js.svg",
       prefix: "node/",
       collapsible: true,
       children: [
