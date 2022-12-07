@@ -21,6 +21,25 @@ export const sidebarConfig = sidebar({
       link: "/git",
       collapsible: true,
       children: "structure"
+    },
+    {
+      text: "Gradle",
+      icon: "lanunch",
+      prefix: "gradle/",
+      collapsible: true,
+      children: [
+        "settings",
+        "catalog",
+      ]
+    },
+    {
+      text: "Node",
+      icon: "lanunch",
+      prefix: "node/",
+      collapsible: true,
+      children: [
+        "pnpm"
+      ]
     }
   ],
 });
