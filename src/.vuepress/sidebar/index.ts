@@ -39,6 +39,62 @@ export const sidebarConfig = sidebar({
       children: [
         "pnpm"
       ]
+    },
+    {
+      text: "Spring",
+      icon: "leaf",
+      prefix: "spring/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "Test",
+      icon: "leaf",
+      prefix: "test/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "Design Patten",
+      icon: "leaf",
+      prefix: "design-patten/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "Mysql",
+      icon: "leaf",
+      prefix: "mysql/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "MQ",
+      icon: "leaf",
+      prefix: "mq/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "ORM",
+      icon: "leaf",
+      prefix: "orm/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "Other",
+      icon: "leaf",
+      prefix: "other/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "Interview",
+      icon: "leaf",
+      prefix: "interview/",
+      collapsible: true,
+      children: "structure"
     }
   ],
 });
