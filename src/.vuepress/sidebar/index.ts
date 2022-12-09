@@ -2,7 +2,7 @@ import { sidebar } from "vuepress-theme-hope";
 
 export const sidebarConfig = sidebar({
   "/": [
-    "",
+    "start",
     {
       text: "Java",
       icon: "java",
@@ -88,13 +88,7 @@ export const sidebarConfig = sidebar({
       prefix: "other/",
       collapsible: true,
       children: "structure"
-    },
-    {
-      text: "Interview",
-      icon: "question",
-      prefix: "interview/",
-      collapsible: true,
-      children: "structure"
     }
   ],
+  "/interview/":"structure"
 });
