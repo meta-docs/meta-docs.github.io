@@ -18,7 +18,7 @@ layout: Slide
 
 <!-- .element: class="r-fit-text" -->
 
-> 作者 Mr.Eric. 请滚动鼠标滚轮进入下一页
+> 作者 FangTao. 请滚动鼠标滚轮进入下一页
 
 ---
 

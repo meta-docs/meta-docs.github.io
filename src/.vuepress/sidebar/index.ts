@@ -15,6 +15,20 @@ export const sidebarConfig = sidebar({
       ]
     },
     {
+      text: "Spring",
+      icon: "leaf",
+      prefix: "spring/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
+      text: "Test",
+      icon: "interact",
+      prefix: "test/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
       text: "Git",
       icon: "git",
       prefix: "git/",
@@ -33,7 +47,7 @@ export const sidebarConfig = sidebar({
     },
     {
       text: "Node",
-      icon: "/assets/icon/node-js.svg",
+      icon: "nodeJS",
       prefix: "node/",
       collapsible: true,
       children: [
@@ -41,57 +55,43 @@ export const sidebarConfig = sidebar({
       ]
     },
     {
-      text: "Spring",
-      icon: "leaf",
-      prefix: "spring/",
-      collapsible: true,
-      children: "structure"
-    },
-    {
-      text: "Test",
-      icon: "leaf",
-      prefix: "test/",
-      collapsible: true,
-      children: "structure"
-    },
-    {
       text: "Design Patten",
-      icon: "leaf",
+      icon: "guide",
       prefix: "design-patten/",
       collapsible: true,
       children: "structure"
     },
     {
       text: "Mysql",
-      icon: "leaf",
+      icon: "mysql",
       prefix: "mysql/",
       collapsible: true,
       children: "structure"
     },
     {
       text: "MQ",
-      icon: "leaf",
+      icon: "relation",
       prefix: "mq/",
       collapsible: true,
       children: "structure"
     },
     {
       text: "ORM",
-      icon: "leaf",
+      icon: "frame",
       prefix: "orm/",
       collapsible: true,
       children: "structure"
     },
     {
       text: "Other",
-      icon: "leaf",
+      icon: "others",
       prefix: "other/",
       collapsible: true,
       children: "structure"
     },
     {
       text: "Interview",
-      icon: "leaf",
+      icon: "question",
       prefix: "interview/",
       collapsible: true,
       children: "structure"

@@ -271,7 +271,7 @@ public class TaskExecutor {
 5. slave再开启一个sql线程读取relay log事件并在slave执行，完成同步
 6. slave记录自己的binglog
 
-![图片](assets/640.webp)
+![图片](./assets/awnbo-iyghl.jpg)
 
 由于mysql默认的复制方式是异步的，主库把日志发送给从库后不关心从库是否已经处理，这样会产生一个问题就是假设主库挂了，从库处理失败了，这时候从库升为主库后，日志就丢失了。由此产生两个概念。
 

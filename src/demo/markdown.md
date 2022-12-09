@@ -347,7 +347,7 @@ span {
 
 #### 样式化
 
-向 Mr.Eric 捐赠一杯咖啡。 _Recommended_
+向 FangTao 捐赠一杯咖啡。 _Recommended_
 
 - [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/stylize.html)
 
