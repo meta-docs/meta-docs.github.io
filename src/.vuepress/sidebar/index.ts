@@ -29,6 +29,13 @@ export const sidebarConfig = sidebar({
       children: "structure"
     },
     {
+      text: "Cloud Native",
+      icon: "cache",
+      prefix: "cloud-native/",
+      collapsible: true,
+      children: "structure"
+    },
+    {
       text: "Git",
       icon: "git",
       prefix: "git/",
