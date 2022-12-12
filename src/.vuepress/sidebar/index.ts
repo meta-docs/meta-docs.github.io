@@ -57,7 +57,7 @@ export const sidebarConfig = sidebar({
     {
       text: "Design Patten",
       icon: "guide",
-      prefix: "design-patten/",
+      prefix: "design-pattern/",
       collapsible: true,
       children: "structure"
     },

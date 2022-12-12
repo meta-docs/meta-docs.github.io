@@ -1,4 +1,4 @@
-
+# MySQL 总结
 
 ## 存储引擎
 MySQL常用的存储引擎为MyISAM、InnoDB、MEMORY、MERGE。其中InnoDB提供事务安全表，其他存储引擎都是非事务安全表。
