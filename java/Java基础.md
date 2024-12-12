@@ -36,7 +36,7 @@ Hello World
 
 当我们去除 `String[] args` 编译并运行后会得到以下结果
 
-```
+```bash
 $ java HelloWorld
 错误: 在类 HelloWorld 中找不到 main 方法, 请将 main 方法定义为:
    public static void main(String[] args)
@@ -52,7 +52,7 @@ $ java HelloWorld
 
 首先改造一下我们的代码
 
-```
+```java
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -61,9 +61,10 @@ public class HelloWorld {
     }
 }
 ```
+
 利用命令行窗口传参：
 
-```
+```bash
 $ java HelloWorld a b
 Hello World
 a
@@ -74,7 +75,7 @@ b
 
 利用[ClassViewer](https://github.com/ClassViewer/ClassViewer)来查看class文件
 
-```
+```bash
 CA FE BA BE 00 00 00 34 00 1D 0A 00 06 00 0F 09 
 00 10 00 11 08 00 12 0A 00 13 00 14 07 00 15 07 
 00 16 01 00 06 3C 69 6E 69 74 3E 01 00 03 28 29 
@@ -103,6 +104,7 @@ CA FE BA BE 00 00 00 34 00 1D 0A 00 06 00 0F 09
 0A 00 00 00 0A 00 02 00 00 00 03 00 08 00 04 00 
 01 00 0D 00 00 00 02 00 0E  
 ```
+
 这是一个十六进制符号组成的文件
 
 字节码结构：
@@ -117,8 +119,7 @@ CA FE BA BE 00 00 00 34 00 1D 0A 00 06 00 0F 09
 
 看不明白没有关系，java提供了javap命令可以查看内容是什么。
 
-
-```
+```bash
 $ javap -verbose HelloWorld
 Classfile /D:/demo/HelloWorld.class
   Last modified 2019-12-27; size 425 bytes
@@ -184,11 +185,12 @@ Constant pool:
 }
 SourceFile: "HelloWorld.java"
 ```
+
 那这些对我们学习Java有什么帮助呢？
 
 看一个Demo
 
-```
+```java
 public class Demo1 {
     public static void main(String args[]) {
         test1();
@@ -201,11 +203,12 @@ public class Demo1 {
     }
 }
 ```
+
 有些同学可能知道这是编译器编译时优化，那到底从哪里可以看出来呢？
 
 jdk1.8
 
-```
+```bash
 $ javap -verbose Demo1
 Classfile /D:/demo/Demo1.class
   Last modified 2019-12-28; size 684 bytes
@@ -286,9 +289,10 @@ Constant pool:
             0       4     0  args   [Ljava/lang/String;
 }
 ```
+
 jdk1.7 版本
 
-```
+```bash
 public static void test1(); 
 Code: Stack= 3, Locals= 2, Args_ size= 0 
 0: ldc #2; //String ab1 
@@ -308,7 +312,7 @@ Code: Stack= 3, Locals= 2, Args_ size= 0
 
 此时你理解了什么是编译时优化了吗？再看一个Demo
 
-```
+```java
 public class Demo2 {
 
     public static void main(String[] args) {
@@ -335,11 +339,12 @@ public class Demo2 {
 }
 
 ```
+
 我们发现，只有在编译阶段能确定这个final引用赋值的内容，编译器才有可能进行编译时优化（请不要和运行时的操作扯到一起，那样你可能理解不清楚），而在编译阶段能确定的内容只能来自于常量池中，例如int、long、String等常量，也就是不包含newString（）、newInteger（）这样的操作，因为这是运行时决定的，也不包含方法的返回值。因为运行时它可能返回不同的值，带着这个基本思想，对于编译时的优化理解就基本不会出错了。
 
 再看最后一个Demo
 
-```
+```java
 public class Demo3 {
     public static void main(String[] args) {
         test();
@@ -350,13 +355,9 @@ public class Demo3 {
         ++b;
         c = c++;
         d = ++d;
-        System.out.println(a + "\t" + b + "\t" + c + "\t" + d);// 2	2 1	2
+        System.out.println(a + "\t" + b + "\t" + c + "\t" + d); // 2 2 1 2
     }
 }
-```
-
-
-```
 $ javap -verbose Demo3
 Classfile /D:/demo/Demo3.class
   Last modified 2019-12-27; size 737 bytes
@@ -491,6 +492,6 @@ SourceFile: "Demo3.java"
 
 其中14、15、18行相当于
 
-```
+```java
 int tmp = c; c++; c = tmp;
 ```

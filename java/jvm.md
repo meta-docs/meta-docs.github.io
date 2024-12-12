@@ -1,6 +1,7 @@
 # 玩转JVM虚拟机：JVM内存结构
 
 ## 一、JVM内存结构
+
 ![1](https://note.youdao.com/yws/res/33353/39EF376E88774ECDA1DA1606A1FE30E1)
 
 ### 1 程序计数器  
