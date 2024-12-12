@@ -1,4 +1,5 @@
 # 【译】java8之collector - 简书
+
 原文链接：[Collectors](https://github.com/shekhargulati/java8-the-missing-tutorial/blob/master/04-collectors.md)
 
 在前一节中，我们已经了解到StreamAPI能够帮助我们用更直观简洁的方式来处理集合。现在我们来看一下collect方法，它是一个能够把stream管道中的结果集装进一个List集合的终极操作。 collect是一个把stream规约成一个value的规约操作，这里的value可以是一个Collection、Map或者一个value对象。在下面这几种情况下，可以使用collect操作。
@@ -8,6 +9,7 @@
 3. **分离stream中的元素** 可以把一个stream分离到两个组中--正在进行中的和已经完成的task。
 
 ## Collector in Action
+
 下面我们通过这个根据type来对task进行分组的例子，来体验 `Collector` 的作用。在java8中，我们可以像下面这样来实现根据 `TaskType` 分组。请参考博客[day 2](http://shekhargulati.com/2015/07/26/day-2-lets-learn-about-streams/)
 
 ```java

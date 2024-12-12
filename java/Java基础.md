@@ -12,9 +12,9 @@ Java分为三个体系：
 
 2005年6月，JavaOne大会召开，SUN公司公开Java SE 6。此时，Java的各种版本已经更名以取消其中的数字"2"：J2EE更名为Java EE, J2SE更名为Java SE，J2ME更名为Java ME。
 
-## 从HEllo World 说起
+## 从 HEllo World 说起
 
-##### 第一个Java程序
+### 第一个 Java 程序
 
 ```java
 public class HelloWorld {
@@ -24,17 +24,17 @@ public class HelloWorld {
 }
 ```
 
-##### 如何编译并运行
+#### 如何编译并运行
 
-```
+```bash
 $ javac HelloWorld.java
 $ java HelloWorld
 Hello World
 ```
 
-##### main方法的入参`String args[]`有什么用，可以不写吗？有其他写法吗？
+#### main方法的入参`String args[]`有什么用，可以不写吗？有其他写法吗？
 
-当我们去除`String[] args`编译并运行后会得到以下结果
+当我们去除 `String[] args` 编译并运行后会得到以下结果
 
 ```
 $ java HelloWorld
@@ -494,20 +494,3 @@ SourceFile: "Demo3.java"
 ```
 int tmp = c; c++; c = tmp;
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
