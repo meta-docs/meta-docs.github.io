@@ -2,11 +2,11 @@
 
 ## 编辑器
 
-[Visual Studio Code 快捷键](./software/vscode%20快捷键.md)
+[Visual Studio Code 快捷键](./Software/vscode%20快捷键.md)
 
 ## Java
 
-[Java 基础](./java/Java20%基础.md)
+[Java 基础](./Java/Java%20基础.md)
 
 [Java 进阶之路](./Arch/Java%20进阶之路.md)
 
