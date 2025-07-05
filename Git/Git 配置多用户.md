@@ -141,7 +141,7 @@ git config --local --list
 
 用项目配置的方法虽然可以实现不同项目配置不同信息，但每个项目都配置一遍就太麻烦了，而且会经常出现漏配的情况，有把公司信息暴露到公共空间中风险。使用git的`Conditional Includes`可以解决这个问题。`Conditional Includes`可以针对文件夹来配置，配置方法如下：
 
-在`~/`目录下，新建 `.gitconfig_gitlab` 文件，编辑内容如下
+在 git 仓库目录下，新建 `.gitconfig_gitlab` 文件，编辑内容如下
 
 ```
 [user]
@@ -159,11 +159,11 @@ git config --local --list
 
 全局通用配置文件`~/.gitconfig`里面的内容是：
 
-```ini
-[includeIf "gitdir:~/gitlab-workspace/"]
-    path = .gitconfig-self
-[includeIf "gitdir:~/github_workspace/"]
-    path = .gitconfig-work
+```text
+[includeIf "gitdir:D:/git/github/"]
+    path = ./gitconfig/.gitconfig-github
+[includeIf "gitdir:D:/git/gitee/"]
+    path = ./gitconfig/.gitconfig-gitee
 ```
 
 `gitdir:`后面设置的是你想设置的文件夹目录，使用的是glob匹配模式，记得要以`/`结尾，否则不会生效（以`/`结尾，`**`会被自动添加上，比如`you/dir/` 会变成 `you/dir/**`，这样才能生效到所有子文件夹）。
